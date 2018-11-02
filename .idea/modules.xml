@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/30w.iml" filepath="$PROJECT_DIR$/30w.iml" />
-      <module fileurl="file://$PROJECT_DIR$/time-killer/time-killer.iml" filepath="$PROJECT_DIR$/time-killer/time-killer.iml" />
     </modules>
   </component>
 </project>

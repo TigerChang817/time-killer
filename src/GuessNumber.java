@@ -34,7 +34,7 @@ public class GuessNumber {
       for (int i = 0; i < num1; i++) {
         ans += strings.get(i);
       }
-//      System.out.println(ans);
+      System.out.println(ans);
       System.out.println("該開始猜了吧!!");
       long start = System.currentTimeMillis();
 
@@ -42,7 +42,7 @@ public class GuessNumber {
       String string = scanner2.nextLine();
       while (!ans.equals(string)) {
         try {
-          Integer.parseInt(string);
+          Long.decode(string);
           // 避免重複數字
           if (string.length() == num1) {
             if (getNotEqualNum(string)) {
