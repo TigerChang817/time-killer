@@ -28,21 +28,21 @@ public class GuessNumber {
       }
 
       System.out.println("你選擇的為猜數字的位數為" + num1 + "位");
+      System.out.println("太難的話可以打giveup來看到答案喔 >///<");
       List<String> strings = Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
       Collections.shuffle(strings);
       String ans = "";
       for (int i = 0; i < num1; i++) {
         ans += strings.get(i);
       }
-//      System.out.println(ans);
       System.out.println("該開始猜了吧!!");
       long start = System.currentTimeMillis();
 
       Scanner scanner2 = new Scanner(System.in);
       String string = scanner2.nextLine();
-      while (!ans.equals(string)) {
+      while (!ans.equals(string) && !"giveup".equalsIgnoreCase(string)) {
         try {
-          Long.decode(string);
+          Long.parseLong(string);
           // 避免重複數字
           if (string.length() == num1) {
             if (getNotEqualNum(string)) {
@@ -62,10 +62,16 @@ public class GuessNumber {
           string = scanner3.nextLine();
         }
       }
-      System.out.println("恭喜你答對了!! ^_^");
-      long end = System.currentTimeMillis();
-      long costtime = end - start;
-      System.out.println("費時"+ (double)costtime/1000D +"秒");
+      if(ans.equals(string)){
+        System.out.println("恭喜你答對了!! ^_^");
+        long end = System.currentTimeMillis();
+        long costtime = end - start;
+        System.out.println("費時"+ (double)costtime/1000D +"秒");
+      }else if("giveup".equalsIgnoreCase(string)){
+        System.out.println("很可惜挑戰失敗Q_Q");
+        System.out.println("答案為: "+ans);
+        System.out.println("加油好ㄇ");
+      }
       System.out.println("再來一場? [y/n]");
       Scanner scanner4 = new Scanner(System.in);
       repeat = scanner4.nextLine();
