@@ -34,7 +34,7 @@ public class GuessNumber {
       for (int i = 0; i < num1; i++) {
         ans += strings.get(i);
       }
-      System.out.println(ans);
+//      System.out.println(ans);
       System.out.println("該開始猜了吧!!");
       long start = System.currentTimeMillis();
 
