@@ -49,22 +49,24 @@ public class GuessNumber {
               // 設定幾A幾B
               System.out.println(getXAXB(ans, string));
             } else {
-              System.out.println("請輸入不重複的數字");
+              System.out.println("請不要輸入相同數字好嗎??");
             }
           } else {
-            System.out.println("請輸入" + num1 + "個不重複數字");
+            System.out.println("請輸入" + num1 + "個不重複數字好嗎??");
           }
-          Scanner scanner3 = new Scanner(System.in);
-          string = scanner3.nextLine();
+          Scanner scanner4 = new Scanner(System.in);
+          string = scanner4.nextLine();
         } catch (Exception e) {
           System.out.println("請輸入數字好嗎?? zzz");
+          Scanner scanner3 = new Scanner(System.in);
+          string = scanner3.nextLine();
         }
       }
       System.out.println("恭喜你答對了!! ^_^");
       long end = System.currentTimeMillis();
       long costtime = end - start;
       System.out.println("費時"+ (double)costtime/1000D +"秒");
-      System.out.println("再來一場? [y]");
+      System.out.println("再來一場? [y/n]");
       Scanner scanner4 = new Scanner(System.in);
       repeat = scanner4.nextLine();
     }
